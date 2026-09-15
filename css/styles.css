@@ -1,0 +1,691 @@
+/* 1. VARIABLES DE COLOR Y TIPOGRAFÍA: Tonos cálidos, terrosos y cercanos*/
+
+:root {
+    --color-fondo: #fcfbf9; /*Blanco roto/hueso*/
+    --color-texto: #2d312e; /*Gris oscuro (mejor contraste y lectura)*/
+    --color-primario: #3a5a40; /* Verde bosque (red naturaleza - micelio)*/
+    --color-acento: #c97a56; /*Terracota/arcilla*/
+    --color-borde: #e6e4df; /*Gris suave para líneas sutiles*/
+
+    --fuente-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /*Tipografía*/
+    --max-ancho: 1100px; /*Ancho máx. para que el texto no se estire demasiado en pantallas grandes*/
+    
+}
+
+/*2. RESETEO BÁSICO Y ESTILOS GENERALES*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-base);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/*Para que los enlaces no tengan el subrayado típico por defecto*/
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*Quitar puntos negros en las listas*/
+ul {
+    list-style: none;
+}
+
+/*3. CABECERA Y NAVEGACIÓN (FLEXBOX)*/
+.site-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--color-borde);
+    position: sticky; /*Se queda fija arriba cuando se hace scroll*/
+    top: 0;
+    z-index: 100;
+} 
+
+/*Contenedor que centra el contenido en la pantalla*/
+.header-container {
+    max-width: var(--max-ancho);
+    margin: 0 auto; /*0 arriba/abajo, auto a los lados = centrado horizontal*/
+    padding: 1.2rem 1.5rem; /*Espacio interior para que respire*/
+
+    display: flex;
+    justify-content: space-between; /*reparte el espacio: logo izq, enlaces medio, acciones dr*/
+    align-items: center; /*Centra verticalmente todos los elementos*/
+    position: relative;  /*Clave: el menú absoluto se posicionará relativo a este contenedor (para garantizar la apertura en móviles) + actualización en @media*/
+}
+
+/*Logo-Nombre*/
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;       /* Espacio entre el icono y la palabra SUTURA */
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--color-primario);
+}
+
+.logo-img {
+    height: 70px;
+    width: 70px;                  /* Fijamos ancho igual a la altura para un círculo perfecto */
+    border-radius: 40%;           /* Hace la imagen completamente redonda */
+    object-fit: cover;            /* Asegura que la imagen rellene el círculo sin deformarse */
+    border: 2px solid var(--color-primario); /* Línea sutil en tono arcilla/terracota */
+    padding: 2px;                 /* Pequeño margen interno para que respire */
+    background-color: #ffffff;    /* Fondo blanco interior por si la imagen tiene transparencias */
+}
+
+/*Lista de enlaces del menu*/
+.nav-links {
+    display: flex;
+    gap: 2rem; /*Espacio entre cada enlace*/
+}
+
+.nav-links a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+/*Efecto al pasar el ratón (hover)*/
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-acento);
+}
+
+/*Bloque derecho: idioma y botón "Súmate" */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.lang-selector {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #888;
+}
+
+.lang-selector .lang-active {
+    color: var(--color-primario);
+}
+
+/*Botón destacado Súmate */
+.btn-apoya {
+    background-color: var(--color-acento);
+    color: #ffffff !important;
+    padding: 0.5rem 1.1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: opacity 0.2s ease;
+}
+
+.btn-apoya:hover {
+    opacity: 0.9;
+}
+
+/*4. SECCIÓN HERO (Portada) */
+
+.hero {
+    padding: 5rem 1.5rem; /*Espacio vertical*/
+    background-color: #f7f5f0; /*Tono arena para diferenciarlo del header*/
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.header-container {
+    max-width: 800px; /*Un ancho mas estrecho para facilitar la lectura del texto*/
+    margin: 0 auto;
+    text-align: center; /*Centra todo el contenido del Hero*/
+}
+
+/*La pequeña etiqueta descriptiva superior*/
+.hero-tag {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase; /*Pone el texto en mayúsculas automáticamente*/
+    letter-spacing: 1.5px;
+    color: var(--color-acento);
+    margin-bottom: 1.2rem;
+}
+
+/*El titulo principal H1*/
+.her h1 {
+    font-size: 2.6rem;
+    line-height: 1.2;
+    color: var(--color-primario);
+    margin-bottom: 1.5;
+    font-weight: 700;
+}
+
+/*El parrafo explicativo*/
+.hero p {
+    font-size: 1.15rem;
+    color: #4a4e4b;
+    margin-bottom: 2.2rem;
+    line-height: 1.7;
+}
+
+/*Contenedor de botones */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap; /*Si la pantalla es pequeña, bajan a otra linea sin romperse*/
+}
+
+/*Estilos comunes a todos los botones*/
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.6rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+/*Botón primario (relleno sólido)*/
+.btn-primary {
+    background-color: var(--color-primario);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #2b4330; /*Un verde un poco más oscuro al posar el ratón*/
+}
+
+/*Botón secundario (borde)*/
+.btn-secundary {
+    background-color: transparent;
+    color: var(--color-primario);
+    border: 1px solid var(--color-primario);
+}
+
+.btn-secundary:hover {
+    background-color: var(--color-primario);
+    color: #ffffff;
+}
+
+/*5. CONTENEDOR REUTILIZABLE Y ENCABEZADOS DE SECCIÓN*/
+
+.container {
+    max-width: var(--max-ancho);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 3rem auto; /*Margen inferior para separar del contenido*/
+}
+
+.section-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-acento);
+    margin-bottom: 0.5rem;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    color: var(--color-primario);
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+}
+
+.section-subtitle {
+    font-size: 2rem;
+    color: #666a67;
+}
+
+/*6. SECCIÓN MANIFIESTO (GRID DE PRINCIPIOS)*/
+
+.manifiesto {
+    padding: 5rem 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.principios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem; /*Espacio uniforme entre tarjetas*/
+}
+
+/*Tarjeta individual*/
+.principio-card {
+    background-color: var(--color-fondo);
+    padding: 2.2rem 1.8rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-borde);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/*Efecto sutil de elevación al pasar el ratón*/
+.principio-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.principio-card h3 {
+    font-size: 1.25rem;
+    color: var(--color-primario);
+    margin-bottom: 0.8rem;
+}
+
+.principio-card p {
+    font-size: 0.95rem;
+    color: #555855;
+    line-height: 1.6;
+}
+
+/*7. SECCIÓN SERVICIOS (Portada index.html)*/
+
+.servicios {
+    padding: 5rem 0;
+    background-color: var(--color-fondo);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax (300px,1fr));
+    gap: 2rem;
+}
+
+/*Estructura de la tarjeta individual*/
+.servicio-card {
+    background-color: #ffffff;
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-borde);
+    border-top: 4px solid var(--color-primario); /*La linea decorativa superior*/
+
+    display: flex;
+    flex-direction: column; /*Apila los elementos en vertical*/
+    justify-content: space-between; /*Separa el texto arriba y el botón abajo*/
+
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-4px);
+    border-top-color: var(--color-acento); /*Cambia el color de la barra al pasar el ratón*/
+}
+
+.servicio-card h3 {
+    font-size: 1.35rem;
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+}
+
+.servicio-card p {
+    font-size: 0.95rem;
+    color: #555855;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/*Enlace tipo texto con flecha interactiva*/
+.btn-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-primario);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: color 0.2s ease,transform 0.2s ease;
+}
+
+.btn-text:hover {
+    color: var(--color-acento);
+    transform: translateX(4px); /*Desplaza ligeramente la flecha a la derecha*/
+}
+
+/*8. SECCIÓN APOYA / SÚMATE (Portada index.html)*/
+
+.apoyo {
+    padding: 5rem 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.apoyo-box {
+    background-color: #f7f3ee; /*Tono crema cálido para destacar*/
+    border: 1px solid #ebdcd0;
+    border-radius: 12px;
+    padding: 3.5rem 2rem;
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.apoyo-box h2 {
+    font-size: 2rem;
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.apoyo-box p {
+    font-size: 1.05rem;
+    color: #4a4e4b;
+    max-width: 650px;
+    margin: 0 auto 2.5rem auto; /*Centra el párrafo y da margen inferior*/
+    line-height: 1.7;
+}
+
+.apoyo-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+/*Modificación sutil para el botón secundario dentro de este fondo crema*/
+.apoyo-box .btn-secundary {
+    border-color: var(--color-primario);
+    background-color: #ffffff;
+}
+
+.apoyo-box .btn-secundary:hover {
+    background-color: var(--color-primario);
+    color: #ffffff;
+}
+
+/*9. SECCIÓN CONTACTO / FORMULARIO*/
+
+.contacto {
+    padding: 5rem 0;
+    background-color: var(--color-fondo);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+/*Rejilla: 2 partes para el formulario, 1 parte para la tarjeta lateral*/
+.contacto-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    align-items: start;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-texto);
+    margin-bottom: 0.5rem;
+}
+
+/*Estilos comunes a inputs, select y textarea*/
+.form-group input, 
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background-color: #faf9f7;
+    color: var(--color-texto);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/*Estado activo al hacer clic o escribir*/
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px rgba(58, 90, 64, 0.15);
+    background-color: #ffffff;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.btn-submit {
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+}
+
+/*Tarjeta lateral informativa de WhatsApp*/
+.canal-card {
+    background-color: #ffffff;
+    padding: 2.2rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-borde);
+}
+
+.canal-card h3 {
+    font-size: 1.25rem;
+    color: var(--color-primario);
+    margin-bottom: 0.8rem;
+}
+
+.canal-card p {
+    font-size: 0.95rem;
+    color: #555855;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-acento);
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-whatsapp:hover {
+    color: var(--color-primario);
+    transform: translateX(4px);
+}
+
+/*10. PIE DE PÁGINA (FOOTER)*/
+
+.site-footer {
+    background-color: var(--color-primario);
+    color: #e5ede7; /*Tono claro con tinte verdoso muy suave*/
+    padding-top: 4rem;
+}
+
+/*Rejilla de tres columnas principales*/
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit), minmax(220px, 1fr);
+    gap: 3rem;
+    padding-bottom: 3.5rem;
+}
+
+/*Columna de identidad*/
+.footer-about .logo {
+    color: #ffffff;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.footer-about p {
+    font-size: 00.95rem;
+    line-height: 1.6;
+    color: #c0cfc3;
+    max-width: 320px;
+}
+
+/*Titulos de las columnas de enlaces*/
+.footer-col h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+/*Listas de enlaces del pie*/
+.footer-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.footer-links a {
+    font-size: 0.95rem;
+    color: #c0cfc3;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    transform: translateX(3px);
+}
+
+/*Barra inferior de derechos y autoría*/
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 1.5rem 0;
+    font-size: 0.85rem;
+    color: #9cb1a1;
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* ==========================================================================
+   11. PÁGINAS EN CONSTRUCCIÓN
+   ========================================================================== */
+.en-construccion {
+    min-height: 65vh;              /* Ocupa al menos el 65% de la altura visible de pantalla */
+    display: flex;
+    align-items: center;           /* Centrado vertical */
+    justify-content: center;       /* Centrado horizontal */
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.construccion-box {
+    max-width: 600px;
+}
+
+.construccion-icono {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: flotar 3s ease-in-out infinite; /* Pequeño balanceo suave */
+}
+
+.construccion-box h1 {
+    font-size: 2.2rem;
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+}
+
+.construccion-box p {
+    font-size: 1.1rem;
+    color: #555855;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/*======================================================================================*/
+
+/*12. RESPONSIVE DESIGN Y MEDIA QUERIES*/
+
+/*Por defecto, en pantallas de ordenador ocultamos el botón hamburguesa*/
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-primario);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/*Reglas exclusivas para pantallas de menos de 768px (Tablets y Móviles*/
+@media (max-width: 768px) {
+    /*Mostrar el menú hamburguesa*/
+    .menu-toggle {
+        display: flex;
+    }
+
+    .main-nav {
+        display: none;  /*Oculto por defecto hasta que pulsen la hamburguesa*/
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        border-bottom: 1px solid var(--color-borde);
+        padding: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        z-index: 999; /*para el menú en móviles*/
+    }
+
+    /*Clase que añadiremos con JS en la Fase 3 para mostrarlo*/
+    .main-nav.nav-open {
+        display: block; /*Importante para los móviles*/
+    }
+
+    .nav-links {
+        flex-direction: column;  /*Enlaces en lista vertical*/
+        gap: 1.2rem;
+        text-align: center;
+    }
+
+    /*Ajustes en textos para que no se vean desproporcionados en pantallas pequeñas*/
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p{
+        font-size: 1rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+
+    /*Los botones del hero y apoyo ocuparán todo el ancho para que sea fácil tocarlo con el dedo*/
+    .hero-buttons .btn,
+    .apoyo-action .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+}

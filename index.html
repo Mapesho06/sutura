@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUTURA | Acompañamiento Social y Comunitario</title>
+
+    <!--Enlace a CSS-->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!--CABECERA PRINCIPAL-->
+    <header class="site-header">
+        <div class="header-container">
+            <!--Logotipo / Nombre del proyecto-->
+            <a href="index.html" class="logo">
+                <img src="img/logo-provisional.jpg" alt="Logotipo de SUTURA" class="logo-img">
+                <span>SUTURA</span>
+            </a>
+
+            <!--Botón menú hamburguesa (visible solo en móviles)-->
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!--Navegación principal-->
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="quienes-somos.html">Quiénes somos</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <!--Aciones secundarias: selector de idioma y botón destacado-->
+            <div class="header-actions">
+                <div class="lang-selector">
+                    <span class="lang-active">ES</span> | <span>CA</span> <!--lang-active para "señalar y activar" solo la parte de ES (ESPAÑOL)-->
+                </div>
+                <a href="#apoya" class="btn-apoya">Súmate</a>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!--SECCIÓN HERO (Portada)-->
+    <main>
+        
+        <section class="hero">
+            <div class="her-container">
+                <span class="hero-tag">Acompañamiento social y comunitario en Barcelona</span>
+                <h1>Facilitar procesos, fortalecer vínculos y activar recursos.</h1>
+                <p>
+                    Acompañamos situaciones de bloqueo, cambio o conflictodesde una mirada cercana y sistémica.
+                    Trabajamos desde el <em>hacer con</em>, activando las capacidades que ya existen en personas, grupos y organizaciones.
+                </p>
+                <div class="hero-buttons">
+                    <a href="servicios.html" class="btn btn-primary">Cómo acompañamos</a>
+                    <a href="#contacto" class="btn btn-secundary">Contactar</a>
+                </div>
+            </div>
+        </section>
+
+        <!--SECCIÓN MANIFIESTO/MIRADA -->
+        <section class="manifiesto">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Nuestra mirada</span>
+                    <h2>Acompañar desde el vínculo y la corresponsabilidad</h2>
+                    <p class="section-subtitle">
+                        Las dificultades no son solo individuales; surgen en la relación con el entorno, los servicios y la comunidad.
+                    </p>
+                </div>
+
+                <div class="principios-grid">
+                    <article class="principio-card">
+                        <h3>Hacer con, no hacer por</h3>
+                        <p>
+                            La persona, grupo u organización participa activamente en su propio proceso. No sustituimos, acompañamos para ganar autonomía y decisión.
+                        </p>
+                    </article>
+
+                    <article class="principio-card">
+                        <h3>Mirada sistémica</h3>
+                        <p>
+                            Entendemos los contextos, las redes familiares y comunitarias para reducir distancias y tender puentes útiles y reales.
+                        </p>
+                    </article>
+
+                    <article class="principio-card">
+                        <h3>Activar recursos</h3>
+                        <p>
+                            Partimos del reconocimiento de las capacidades que ya existen en cada espacio, fortaleciendo el tejido colectivo.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!--SECCIÓN SERVICIOS (En la portada)-->
+
+        <section class="servicios">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Áreas de trabajo</span>
+                    <h2>Acompañamiento a medida</h2>
+                    <p class="section-subtitle">
+                        Diferentes puertas de entrada según las necesidades y el momento de cada proceso.
+                    </p>
+                </div>
+
+                <div class="servicios-grid">
+                    <!--Tarjeta 1: Personas-->
+                    <article class="servicio-card">
+                        <div class="servicio-body">
+                            <h3>Personas</h3>
+                            <p>
+                                Acompañamiento individual ante situaciones de cambio, bloqueo personal, trámites sociales o necesidad de orientación y acceso a recursos.
+                            </p>
+                        </div>
+                        <a href="servicios.html#personas" class="btn-text">Ver acompañamiento individual &rarr;</a>
+                    </article>
+                    <!--Tarjeta 2: Grupos y Comunidades-->
+                    <article class="servicio-card">
+                        <div class="servicio-body">
+                            <h3>Grupos y Comunidades</h3>
+                            <p>
+                                Facilitación de procesos grupales, mediación en conflictos comunitarios y fortalecimiento de redes de apoyo y participación colectiva.
+                            </p>
+                        </div>
+                        <a href="servicios.html#grupos" class="btn-text">Ver facilitación grupal &rarr;</a>
+                    </article>
+                    <!--Tarjeta 3: Organizaciones-->
+                    <article class="servicio-card">
+                        <div class="servicio-body">
+                            <h3>Equipos y Organizaciones</h3>
+                            <p>
+                                Asesoramiento y dinámicas de equipo para entidades y servicios sociales que buscan enfoques más humanos, conectados y participativos.
+                            </p>
+                        </div>
+                        <a href="servicios.html#organizaciones" class="btn-text">Ver consultoría de equipos &rarr;</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!--SECCIÓN APOYA / SÚMATE-->
+        <section id="apoya" class="apoyo">
+            <div class="container">
+                <div class="apoyo-box">
+                    <span class="section-tag">Sostén comunitario</span>
+                    <h2>Forma parte de la red de SUTURA</h2>
+                    <p>
+                        Creemos en la corresponsabilidad y en el apoyo mutuo. Existen diversas formas de sumarte: proponiendo proyectos compartidos, aportando recursos o realizando una donación económica destinada a sostener acompañamientos y procesos sociales.
+                    </p>
+                    <div class="apoyo-actions">
+                        <a href="#contacto" class="btn btn-primary">Proponer colaboración</a>
+                        <a href="https://paypal.com" target="_blank" rel="noopener noreferrer" class="btn btn-secundary">Aportación económica &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--SECCIÓN CONTACTO-->
+        <section id="contacto" class="contacto">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Hablemos</span>
+                    <h2>Inicia el contacto</h2>
+                    <p class="setion-sustitle">
+                        Cuéntanos qué necesitas o propón una colaboración. Te responderemos con calma y cercanía.
+                    </p>
+                </div>
+
+                <div class="contacto-wrapper">
+                    <!--Formulario principal-->
+                    <form class="contacto-form" action="#" method="post">
+                        <div class="form-group">
+                            <label for="nombre">Nombre o entidad</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre...">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tipo">¿Qué ámbito te interesa?</label>
+                            <select id="tipo" name="tipo">
+                                <option value="personas">Acompañamiento a personas</option>
+                                <option value="grupos">Acompañamiento a grupos o comunidades</option>
+                                <option value="organizaciones">Equipos y organizaciones</option>
+                                <option value="colaboracion">Propuesta de colaboración</option>
+                                <option value="otro">Otro motivo</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Explícanos brevemente tu consulta o proceso..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-submit">Enviar mensaje</button>
+                    </form>
+
+                    <!--Vía alternativa: WhatsApp directo-->
+                    <aside class="contacto-alternativo">
+                        <div class="canal-card">
+                            <h3>Contacto directo</h3>
+                            <p>
+                               Si prefieres una comunicación más ágil o resolver una duda inicial, escríbenos directamente por WhatsApp. 
+                            </p>
+                            <a href="https://wa.me/34000000000" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">Mensaje por WhatsApp &rarr;</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!--PIE DE PÁGINA FOOTER-->
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <!--Columna 1: Identidad y lema-->
+            <div class="footer-col footer-about">
+                <a href="index.htmal" class="logo">SUTURA</a>
+                <p>
+                    Acompañamiento social, comunitario y organizativo en Barcelona. Tejiendo puentes y activando recursos colectivos.
+                </p>
+            </div>
+
+            <!--Columna 2: Navegación directa-->
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="quienes-somos.html">Quiénes somos</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!--Columna 3: Redes y presencia-->
+            <div class="fotter-col">
+                <h4>Comunidad</h4>
+                <ul class="fotter-col">
+                    <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="https://wa.me/34000000000" target="_blank" rel="noopener noreferrer">WhatsApp directo</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Barra inferior de copyright y créditos-->
+        <div class="footer-bottom">
+            <div class="container footer-bottom-content">
+                <p>&copy; 2026 SUTURA. Todos los derechos reservados.</p>
+                <p>Diseño y desarrollo web con enfoque comunitario.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!--Enlace a JS (AL FINAL DEL BODY)-->
+    <script src="js/main.js"></script>
+
+</body>
+</html>
