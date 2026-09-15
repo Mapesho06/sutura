@@ -39,6 +39,12 @@ El proyecto se encuentra en una **fase inicial y viva**:
 
 Este proyecto forma parte de mi proceso de aprendizaje continuo dentro del Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Web (DAW). Se trata de un ejercicio de aplicación real donde priorizo la claridad del código, el aprendizaje paso a paso y la honestidad técnica por encima de soluciones complejas o sobredimensionadas.
 
+## Despliegue
+
+La versión en producción se encuentra desplegada a través de **Netlify**:
+
+**Demo en vivo:** [sutura-web.netlify.app](https://sutura-web.netlify.app/)
+
 ---
 
 ## Estructura del repositorio
