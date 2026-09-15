@@ -23,23 +23,6 @@ El proyecto nace con un doble propósito:
 
 ---
 
-## Estructura del repositorio
-
-```text
-sutura-web/
-├── css/
-│   └── styles.css          # Estilos globales y diseño visual
-├── img/
-│   └── logo-provisional.jpg # Recursos gráficos iniciales
-├── js/
-│   └── main.js             # Lógica e interactividad básica
-├── index.html              # Página principal / bienvenida
-├── quienes-somos.html      # Información sobre la iniciativa y el equipo
-├── servicios.html          # Áreas de intervención y actividades previstas
-└── README.md               # Documentación del proyecto
-
----
-
 ## Estado actual y próximos pasos
 
 El proyecto se encuentra en una **fase inicial y viva**:
@@ -55,4 +38,23 @@ El proyecto se encuentra en una **fase inicial y viva**:
 ## Nota sobre el proceso
 
 Este proyecto forma parte de mi proceso de aprendizaje continuo dentro del Ciclo Formativo de Grado Superior en Desarrollo de Aplicaciones Web (DAW). Se trata de un ejercicio de aplicación real donde priorizo la claridad del código, el aprendizaje paso a paso y la honestidad técnica por encima de soluciones complejas o sobredimensionadas.
+
+---
+
+## Estructura del repositorio
+
+```text
+sutura-web/
+├── css/
+│   └── styles.css          # Estilos globales y diseño visual
+├── img/
+│   └── logo-provisional.jpg # Recursos gráficos iniciales
+├── js/
+│   └── main.js             # Lógica e interactividad básica
+├── index.html              # Página principal / bienvenida
+├── quienes-somos.html      # Información sobre la iniciativa y el equipo
+├── servicios.html          # Áreas de intervención y actividades previstas
+└── README.md               # Documentación del proyecto
+
+
 
